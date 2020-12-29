@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+li {
+  list-style-type: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+#app {
+  display: grid;
+  grid-auto-rows: minmax(300px, auto);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "title title"
+    "code feeling"
+    "entry entry";
+  color: white;
+  justify-content: center;
+  grid-gap: 1em;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+}
+
+#container {
+  background-color: rgba(20, 20, 20, 0.76);
+}
+
+.zip {
+  grid-area: code;
+}
+
+.feel {
+  grid-area: feeling;
+}
+
+.holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entry {
+  background: rgba(59, 74, 107, 0.4);
+  grid-area: entry;
+}
+
+#entryHolder {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headline {
+  grid-area: title;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  padding: 1em;
+  font-size: 2rem;
+}
+
+video {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+}
+/* Typography */
+h1 {
+  font-size: 2.5em;
+  padding: 1em;
+}
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+  display: block;
+  font-size: 1.7em;
+  margin-bottom: 1em;
+}
+
+input {
+  display: block;
+  height: 60px;
+  width: 20rem;
+  background: #3b4a6b;
+  color: white;
+  font-size: 1.4rem;
+  font-family: "Oswald", sans-serif;
+  border: none;
+}
+
+button {
+  width: 17.4em;
+  height: 100px;
+  background: #3b4a6b;
+  color: white;
+  font-size: 1.3em;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  border-radius: 5px;
+  width: calc(100% - 100px);
+  margin: 1em;
+}
+
+button:hover {
+  background-color: #1c0453;
+  cursor: pointer;
+}
+
+textarea {
+  background: #363d3deb;
+  color: white;
+  font-size: 1.4rem;
+  font-family: "Oswald", sans-serif;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  width: calc(100% - 100px);
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+/* Media query's */
+@media only screen and (max-width: 920px) {
+  #app {
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "code"
+      "feeling"
+      "entry";
+    color: white;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1em;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+  }
+
+  button {
+    margin-bottom: 2em;
+  }
+
+  .zip {
+    margin-bottom: 1.5em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  label {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 1358px) {
+  video {
+    width: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  input {
+    width: 10em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1500px) {
+  input,
+  textarea,
+  #generate,
+  li {
+    font-size: 1.5em;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
